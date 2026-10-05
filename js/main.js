@@ -1,0 +1,27 @@
+import { initSmoothScroll } from "./modules/smooth-scroll.js";
+import { initDock } from "./modules/dock.js";
+import { initReveal } from "./modules/reveal.js";
+import { initParallax } from "./modules/parallax.js";
+import { initShowroom, initShowroomVideo } from "./modules/showroom.js";
+import { initSolutions } from "./modules/solutions.js";
+import { initStatement } from "./modules/statement.js";
+import { initProjectsHover } from "./modules/projects.js";
+
+document.documentElement.classList.add("js");
+
+gsap.registerPlugin(ScrollTrigger);
+
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// i pin vanno creati in ordine di pagina e prima dei trigger sottostanti, che ne ereditano lo spazio
+if (!reduced) {
+  initSmoothScroll();
+  initStatement();
+  initSolutions();
+  initShowroom();
+  initReveal();
+  initParallax();
+  initProjectsHover();
+}
+initDock();
+initShowroomVideo();

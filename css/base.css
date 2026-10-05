@@ -1,0 +1,36 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { -webkit-text-size-adjust: 100%; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+body {
+  font-family: var(--font);
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--c-ink);
+  background: var(--c-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+button { font: inherit; }
+
+.container { width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
+
+/* tipografia */
+.h2 { font-size: clamp(2.25rem, 4vw, 4.5rem); font-weight: 400; line-height: 1; letter-spacing: -.03em; }
+.h2--sm { font-size: clamp(2rem, 3vw, 3.25rem); }
+.lead { max-width: 20rem; }
+.eyebrow { display: inline-flex; align-items: center; gap: .6rem; font-size: .75rem; font-weight: 600; line-height: 1; letter-spacing: .1em; text-transform: uppercase; }
+.eyebrow::before { content: ""; width: .35rem; height: .35rem; background: currentColor; transform: rotate(45deg); }
+.caps { font-size: .6875rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
+
+/* stato iniziale animazioni: solo con JS attivo, evita flash e rompe nulla senza JS */
+.js [data-reveal], .js [data-stagger] > * { opacity: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal], .js [data-stagger] > * { opacity: 1; }
+}
