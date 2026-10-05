@@ -1,7 +1,6 @@
 import { initSmoothScroll } from "./modules/smooth-scroll.js";
 import { initDock } from "./modules/dock.js";
 import { initReveal } from "./modules/reveal.js";
-import { initParallax } from "./modules/parallax.js";
 import { initShowroom, initShowroomVideo } from "./modules/showroom.js";
 import { initSolutions } from "./modules/solutions.js";
 import { initStatement } from "./modules/statement.js";
@@ -20,7 +19,6 @@ if (!reduced) {
   initSolutions();
   initShowroom();
   initReveal();
-  initParallax();
   initProjectsHover();
 }
 initDock();

@@ -21,40 +21,45 @@
   <a href="#contatti" class="btn btn--text">Prenota una visita</a>
 </header>
 
-<!-- DOCK + MENU -->
-<div class="dock">
-  <a href="#top" class="dock__brand" aria-label="Torna su"><img src="assets/logo/calolenoci-icon-white.svg" alt="" width="154" height="122"></a>
-  <span class="dock__label caps">Home</span>
-  <button class="dock__burger" aria-label="Menu" aria-expanded="false" aria-controls="menu" data-menu-toggle><span></span><span></span><span></span></button>
-</div>
-
-<div class="menu" id="menu" data-menu>
-  <div class="panel">
-    <p class="eyebrow">Menu</p>
-    <nav class="panel__nav" aria-label="Principale">
+<!-- DOCK: vetro liquido da chiuso, pannello bianco espanso da aperto (dock.js) -->
+<div class="menu-backdrop" data-menu-backdrop></div>
+<div class="dock" data-dock>
+  <div class="dock__bar">
+    <a href="#top" class="dock__brand" aria-label="Torna su"><img src="assets/logo/calolenoci-icon-white.svg" alt="" width="154" height="122"></a>
+    <span class="dock__label caps">Home</span>
+    <button class="dock__burger" aria-label="Menu" aria-expanded="false" aria-controls="menu" data-menu-toggle><span></span><span></span><span></span></button>
+  </div>
+  <div class="dock__body" id="menu" data-lenis-prevent>
+    <nav class="dock__nav" aria-label="Principale">
       <a href="#azienda">Azienda</a>
       <a href="#prodotti">Prodotti</a>
-      <a href="#showroom">Showroom</a>
       <a href="#progetti">Progetti</a>
+      <a href="#showroom">Showroom</a>
+      <a href="ispirazioni.html">Ispirazioni</a>
+      <a href="servizi.html">Servizi</a>
+      <a href="news.html">News</a>
       <a href="#contatti">Contatti</a>
     </nav>
-    <div class="panel__meta">
-      <div><a href="ispirazioni.html">Ispirazioni</a><a href="servizi.html">Servizi</a><a href="news.html">News</a></div>
-      <div><a href="tel:+390831377180">0831 377180</a><a href="mailto:info@calolenocifrancesco.it">Scrivici</a></div>
+    <div class="dock__foot">
+      <div class="dock__meta">
+        <p><span class="caps">Ostuni</span>Via dell’Edilizia, 2<br><a href="tel:+3908311300987">0831 130 0987</a></p>
+        <p><span class="caps">Ceglie Messapica</span>Via Foggia, 1<br><a href="tel:+390831377180">0831 377180</a></p>
+      </div>
+      <a href="#contatti" class="btn">Prenota una visita</a>
     </div>
-    <a href="#contatti" class="btn btn--block">Prenota una visita</a>
   </div>
 </div>
 
 <main>
 
   <!-- HERO -->
-  <section class="hero">
-    <img class="hero__img" data-parallax src="https://placehold.co/2400x1600/8f877c/8f877c" alt="Showroom Calò Lenoci">
+  <section class="hero" data-dark>
+    <div class="hero__media"><div class="hero__sticky"><img src="https://placehold.co/2400x1600/8f877c/8f877c" alt="Showroom Calò Lenoci"></div></div>
     <h1 class="hero__title" data-split>Il tuo spazio,<br>la nostra passione.</h1>
-    <div class="hero__intro" data-reveal>
-      <p class="eyebrow">Showroom di 1000 mq</p>
-      <p>Pavimenti, arredo bagno, serramenti, climatizzazione ed edilizia: materiali selezionati e consulenza dedicata per privati, architetti e imprese.</p>
+    <a href="#azienda" class="hero__scroll caps">Scroll <span aria-hidden="true">↓</span></a>
+    <div class="hero__intro">
+      <p data-words>Uno showroom di 1000 mq dedicato a pavimenti, arredo bagno, serramenti e climatizzazione. Materiali selezionati e consulenza su misura per privati, architetti e imprese.</p>
+      <a href="#showroom" class="btn btn--text" data-reveal>Scopri gli showroom</a>
     </div>
   </section>
 
@@ -83,7 +88,7 @@
     </div>
   </section>
 
-  <section class="solutions" data-solutions>
+  <section class="solutions" data-solutions data-dark>
     <span class="solutions__progress" aria-hidden="true"><span></span></span>
     <article class="solution">
       <div class="solution__media"><img src="https://placehold.co/2400x1500/7d7469/7d7469" alt="" loading="lazy"></div>
@@ -196,7 +201,7 @@
   </section>
 
   <!-- SHOWROOM -->
-  <section class="showroom" id="showroom">
+  <section class="showroom" id="showroom" data-dark>
     <div class="showroom__stage" data-showroom>
       <div class="showroom__media"><img src="https://placehold.co/2400x1400/6f6a63/6f6a63" alt="Showroom" loading="lazy"></div>
       <button class="showroom__play" type="button" aria-label="Guarda il video dello showroom" data-video-open><span class="play-cursor" aria-hidden="true"><span class="caps">Play</span></span></button>
@@ -250,7 +255,7 @@
   <video src="assets/video/showroom.mp4" controls playsinline preload="none"></video>
 </dialog>
 
-<footer class="footer" id="contatti">
+<footer class="footer" id="contatti" data-dark>
   <img class="footer__bg" src="https://placehold.co/2400x1600/6f6a63/6f6a63" alt="" loading="lazy">
   <img class="footer__word" src="assets/logo/calolenoci-logo-white.svg" alt="" width="259" height="43">
   <div class="panel">

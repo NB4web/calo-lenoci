@@ -1,3 +1,5 @@
+import { splitWords } from "./reveal.js";
+
 // Statement: sezione pinnata, il titolo si accende parola per parola
 // mentre le immagini la attraversano dal basso verso l'alto a velocità diverse.
 export function initStatement() {
@@ -6,7 +8,7 @@ export function initStatement() {
   const title = section.querySelector("[data-words]");
   const imgs = section.querySelectorAll(".statement__imgs img");
 
-  title.innerHTML = title.textContent.trim().split(/\s+/).map((w) => `<span class="word">${w}</span>`).join(" ");
+  splitWords(title);
   section.classList.add("is-pinned");
 
   const tl = gsap.timeline({

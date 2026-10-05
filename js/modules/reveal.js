@@ -3,7 +3,12 @@
 //   data-stagger      figli in cascata
 //   data-reveal-img   immagine con clip-path
 //   data-split        titolo hero, riga per riga (separare con <br>)
+//   data-words        testo che si accende parola per parola durante lo scroll
 const EASE = "power3.out";
+
+// divide il testo in <span class="word"> (testo semplice, senza markup interno)
+export const splitWords = (el) =>
+  (el.innerHTML = el.textContent.trim().split(/\s+/).map((w) => `<span class="word">${w}</span>`).join(" "));
 
 export function initReveal() {
   const trigger = (el) => ({ trigger: el, start: "top 88%", once: true });
@@ -23,6 +28,15 @@ export function initReveal() {
       clipPath: "inset(0 0 0% 0)", duration: 1.4, ease: "power3.inOut", scrollTrigger: trigger(el),
     })
   );
+
+  // escluso [data-statement]: lì le parole fanno parte del pin (statement.js)
+  gsap.utils.toArray("[data-words]").filter((el) => !el.closest("[data-statement]")).forEach((el) => {
+    splitWords(el);
+    gsap.to(el.querySelectorAll(".word"), {
+      opacity: 1, ease: "none", stagger: 0.1,
+      scrollTrigger: { trigger: el, start: "top 85%", end: "bottom 55%", scrub: true },
+    });
+  });
 
   const title = document.querySelector("[data-split]");
   if (title) {
