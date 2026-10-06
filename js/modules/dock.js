@@ -6,7 +6,8 @@ export function initDock() {
   const dock = document.querySelector("[data-dock]");
   const toggle = dock.querySelector("[data-menu-toggle]");
   const body = dock.querySelector(".dock__body");
-  const links = body.querySelectorAll(".dock__nav a");
+  const main = body.querySelector('[data-panel="main"]');
+  const links = main.children;
   const backdrop = document.querySelector("[data-menu-backdrop]");
   const d = matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 0.7;
 
@@ -23,6 +24,29 @@ export function initDock() {
   );
 
   const isOpen = () => dock.classList.contains("is-open");
+
+  // sottomenu: un pannello alla volta; l'altezza del dock si adatta con un'animazione
+  let opener = null;
+  const showPanel = (name, viaKeyboard = false) => {
+    const next = body.querySelector(`[data-panel="${name}"]`);
+    const current = body.querySelector(".dock__panel:not([hidden])");
+    if (next === current) return;
+    const from = dock.offsetHeight;
+    current.hidden = true;
+    next.hidden = false;
+    gsap.fromTo(dock, { height: from }, { height: dock.offsetHeight, duration: d * 0.7, ease: "expo.inOut", clearProps: "height" });
+    const dir = name === "main" ? -1 : 1;
+    gsap.fromTo(next.children, { x: 32 * dir, opacity: 0 }, { x: 0, opacity: 1, duration: d, ease: "expo.out", stagger: 0.03, clearProps: "transform,opacity" });
+    if (name === "main") { if (viaKeyboard) opener?.focus(); }
+    else if (viaKeyboard) next.querySelector("[data-back]").focus();
+    body.scrollTop = 0;
+  };
+  body.addEventListener("click", (e) => {
+    const sub = e.target.closest("[data-sub]");
+    const back = e.target.closest("[data-back]");
+    if (sub) { opener = sub; showPanel(sub.dataset.sub, e.detail === 0); }
+    else if (back) showPanel("main", e.detail === 0);
+  });
 
   const setOpen = (open, viaKeyboard = false) => {
     if (open === isOpen()) return;
@@ -42,10 +66,13 @@ export function initDock() {
       gsap.set(body, { visibility: "visible" });
       if (viaKeyboard) links[0].focus({ preventScroll: true }); // col mouse niente anello di focus
       gsap.to(body, { opacity: 1, duration: d * 0.5, delay: d * 0.4 });
-      gsap.fromTo(links, { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: d, ease: "expo.out", stagger: 0.04, delay: d * 0.45 });
+      gsap.fromTo(links, { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: d, ease: "expo.out", stagger: 0.04, delay: d * 0.45, clearProps: "transform,opacity" });
     } else {
       lenis?.start();
-      gsap.to(body, { opacity: 0, duration: d * 0.25, onComplete: () => gsap.set(body, { visibility: "hidden" }) });
+      gsap.to(body, { opacity: 0, duration: d * 0.25, onComplete: () => {
+        gsap.set(body, { visibility: "hidden" });
+        body.querySelectorAll(".dock__panel").forEach((p) => (p.hidden = p !== main));
+      } });
     }
   };
 

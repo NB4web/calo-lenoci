@@ -8,6 +8,9 @@
 .cat-cover__text .word { opacity: .35; }
 @media (max-width: 760px) { .cat-cover__text { left: var(--gutter); width: auto; bottom: 7rem; } } /* sopra il dock */
 
+/* pagina Prodotti: indice delle macro categorie subito sotto la testata */
+.subcats-page { padding-bottom: var(--section); }
+
 /* titolo sopra l'indice */
 .subcats-head { margin-bottom: clamp(3rem, 6vw, 5.5rem); }
 .subcats-head .h2 { max-width: 48rem; margin-top: 1.5rem; }
