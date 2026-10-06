@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Showroom Ostuni — Calò Lenoci</title>
+  <meta name="robots" content="noindex, nofollow"><!-- anteprima per il cliente: togliere al lancio -->
+  <meta name="description" content="Showroom Calò Lenoci di Ostuni: orari, contatti, foto e prenotazione di un appuntamento.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@200;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/showroom.css">
+</head>
+<body id="top">
+
+<header class="topbar topbar--light">
+  <a href="index.html" class="topbar__logo" aria-label="Calò Lenoci — Home"><img src="assets/logo/calolenoci-logo-white.svg" alt="Calò Lenoci" width="259" height="43"></a>
+  <a href="#contatti" class="btn btn--text">Prenota una visita</a>
+</header>
+
+<!-- DOCK: vetro liquido da chiuso, pannello bianco espanso da aperto (dock.js) -->
+<div class="menu-backdrop" data-menu-backdrop></div>
+<div class="dock" data-dock>
+  <div class="dock__bar">
+    <a href="#top" class="dock__brand" aria-label="Torna su"><img src="assets/logo/calolenoci-icon-white.svg" alt="" width="154" height="122"></a>
+    <span class="dock__label caps">Showroom Ostuni</span>
+    <button class="dock__burger" aria-label="Menu" aria-expanded="false" aria-controls="menu" data-menu-toggle><span></span><span></span><span></span></button>
+  </div>
+  <div class="dock__body" id="menu" data-lenis-prevent>
+    <nav class="dock__nav" aria-label="Principale">
+      <a href="chi-siamo.html">Azienda</a>
+      <a href="index.html#prodotti">Prodotti</a>
+      <a href="index.html#progetti">Progetti</a>
+      <a href="showroom.html">Showroom</a>
+      <a href="ispirazioni.html">Ispirazioni</a>
+      <a href="servizi.html">Servizi</a>
+      <a href="news.html">News</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+    <div class="dock__foot">
+      <div class="dock__meta">
+        <p><span class="caps">Ostuni</span>Via dell’Edilizia, 2<br><a href="tel:+3908311300987">0831 130 0987</a></p>
+        <p><span class="caps">Ceglie Messapica</span>Via Foggia, 1<br><a href="tel:+390831377180">0831 377180</a></p>
+      </div>
+      <a href="#contatti" class="btn">Prenota una visita</a>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- TESTATA -->
+  <section class="store-hero">
+    <div class="store-hero__text">
+      <nav class="crumbs caps" aria-label="Percorso"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="showroom.html">Showroom</a><span aria-hidden="true">/</span><span aria-current="page">Ostuni</span></nav>
+      <h1 class="store-hero__title" data-split>Showroom<br>Ostuni</h1>
+    </div>
+    <div class="store-hero__media" data-reveal-img data-parallax><img src="https://placehold.co/2000x1300/8f877c/8f877c" alt="Showroom Calò Lenoci di Ostuni"></div>
+  </section>
+
+  <!-- DESCRIZIONE, ORARI, CONTATTI -->
+  <section class="section container grid12 store-about">
+    <p class="store-about__text" data-reveal>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    <div class="store-about__aside" data-stagger>
+      <div>
+        <h2 class="caps">Orari di apertura</h2>
+        <p>Lunedì – Venerdì: 9.00–13.00 / 16.00–20.00<br>Sabato: 9.00–13.00</p>
+      </div>
+      <div>
+        <h2 class="caps">Contatti</h2>
+        <p>Via dell’Edilizia, 2 — 72017 Ostuni (BR)<br>T. <a href="tel:+3908311300987">0831 130 0987</a></p>
+      </div>
+      <div class="store__links">
+        <a href="#prenota" class="btn">Prenota un appuntamento</a>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Via+dell%27Edilizia+2+Ostuni" class="btn btn--text" target="_blank" rel="noopener">Indicazioni</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERIA -->
+  <section class="gallery" data-gallery data-dark aria-label="Foto dello showroom">
+    <div class="container gallery__head">
+      <h2 class="h2 h2--sm" data-reveal>Dentro lo showroom</h2>
+      <div class="gallery__nav">
+        <button type="button" aria-label="Foto precedente"><span aria-hidden="true">←</span></button>
+        <button type="button" aria-label="Foto successiva"><span aria-hidden="true">→</span></button>
+      </div>
+    </div>
+    <div class="gallery__track">
+      <figure><img src="https://placehold.co/1800x1125/6f6a63/6f6a63" alt="" loading="lazy"></figure>
+      <figure><img src="https://placehold.co/1800x1125/8f877c/8f877c" alt="" loading="lazy"></figure>
+      <figure><img src="https://placehold.co/1800x1125/a89f93/a89f93" alt="" loading="lazy"></figure>
+      <figure><img src="https://placehold.co/1800x1125/7f7a73/7f7a73" alt="" loading="lazy"></figure>
+      <figure><img src="https://placehold.co/1800x1125/b9b1a6/b9b1a6" alt="" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <!-- PRENOTA UN APPUNTAMENTO -->
+  <section class="section container grid12 booking" id="prenota">
+    <div class="booking__text">
+      <p class="eyebrow" data-reveal>Appuntamento</p>
+      <h2 class="h2" data-reveal>Prenota un appuntamento</h2>
+      <p data-reveal>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+      <div class="booking__services" data-reveal>
+        <h3>Servizi su misura</h3>
+        <ul>
+          <li>Consulenza</li>
+          <li>Progettazione</li>
+          <li>Render 3D</li>
+          <li>Supporto tecnico</li>
+          <li>Assistenza post vendita</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- anteprima: il modulo non è ancora collegato a un backend (gallery.js → initDemoForms) -->
+    <form class="form" data-demo data-reveal>
+      <input type="hidden" name="showroom" value="Ostuni">
+      <div class="form__row">
+        <input name="nome" placeholder="Nome*" aria-label="Nome" autocomplete="given-name" required>
+        <input name="cognome" placeholder="Cognome*" aria-label="Cognome" autocomplete="family-name" required>
+      </div>
+      <div class="form__row">
+        <input type="email" name="email" placeholder="Email*" aria-label="Email" autocomplete="email" required>
+        <input type="tel" name="telefono" placeholder="Numero di telefono*" aria-label="Numero di telefono" autocomplete="tel" required>
+      </div>
+      <select name="ruolo" aria-label="Ruolo" required>
+        <option value="" disabled selected>Ruolo*</option>
+        <option>Privato</option>
+        <option>Architetto / Progettista</option>
+        <option>Impresa</option>
+        <option>Rivenditore</option>
+      </select>
+      <div class="form__row">
+        <input name="citta" placeholder="Città*" aria-label="Città" autocomplete="address-level2" required>
+        <input name="provincia" placeholder="Provincia*" aria-label="Provincia" autocomplete="address-level1" required>
+      </div>
+      <textarea name="messaggio" placeholder="Messaggio" aria-label="Messaggio"></textarea>
+      <label class="form__check"><input type="checkbox" name="privacy" required><span>Ho letto e accetto l’<a href="#">informativa privacy</a>*</span></label>
+      <button type="submit" class="btn">Invia richiesta</button>
+      <p class="form__status" role="status" data-form-status hidden>Grazie! Ti ricontatteremo al più presto per fissare l’appuntamento.</p>
+    </form>
+  </section>
+
+  <!-- CTA -->
+  <section class="section container">
+    <div class="cta-box">
+      <div class="cta-box__text">
+        <p class="eyebrow" data-reveal>Servizi su misura</p>
+        <h2 class="h2" data-reveal>Richiedi una consulenza con i nostri esperti.</h2>
+        <div class="cta-box__actions" data-reveal>
+          <a href="#contatti" class="btn">Richiedi informazioni</a>
+          <a href="servizi.html" class="btn btn--text">I nostri servizi</a>
+        </div>
+      </div>
+      <div class="cta-box__media" data-reveal-img><img src="https://placehold.co/1200x900/d4cec6/d4cec6" alt="" loading="lazy"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer" id="contatti" data-dark>
+  <img class="footer__bg" src="https://placehold.co/2400x1600/6f6a63/6f6a63" alt="" loading="lazy">
+  <img class="footer__word" src="assets/logo/calolenoci-logo-white.svg" alt="" width="259" height="43">
+  <div class="panel">
+    <p class="eyebrow">Contatti</p>
+    <div class="panel__nav">
+      <a href="tel:+390831377180">0831 377180</a>
+      <a href="mailto:info@calolenocifrancesco.it">Scrivici</a>
+    </div>
+    <div class="panel__meta">
+      <div>Ceglie Messapica<br>Via Foggia, 1</div>
+      <div>Ostuni<br>Via dell’Edilizia, 2<br><a href="tel:+3908311300987">0831 130 0987</a></div>
+      <div>Lun–Ven<br>9–13 / 16–20</div>
+      <div>Sabato<br>9–13</div>
+    </div>
+    <a href="contatti.html" class="btn btn--block">Prenota una visita</a>
+  </div>
+  <div class="footer__bar">
+    <nav><span>© 2026 Calò Lenoci Francesco srl</span><span>P. IVA IT02111510745</span><a href="#">Instagram</a><a href="#">Facebook</a></nav>
+    <nav><a href="#">Privacy policy</a><a href="#">Cookie policy</a><span>Made in Never Before Italia</span></nav>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

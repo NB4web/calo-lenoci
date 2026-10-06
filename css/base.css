@@ -16,7 +16,7 @@ body {
 img { display: block; width: 100%; height: 100%; object-fit: cover; }
 a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
-button { font: inherit; }
+button, input, select, textarea { font: inherit; color: inherit; }
 
 .container { width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
 
@@ -27,6 +27,7 @@ button { font: inherit; }
 .eyebrow { display: inline-flex; align-items: center; gap: .6rem; font-size: .75rem; font-weight: 600; line-height: 1; letter-spacing: .1em; text-transform: uppercase; }
 .eyebrow::before { content: ""; width: .35rem; height: .35rem; background: currentColor; transform: rotate(45deg); }
 .caps { font-size: .6875rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
+.word { opacity: .15; } /* parole di [data-words], si accendono in scroll (reveal.js) */
 
 /* stato iniziale animazioni: solo con JS attivo, evita flash e rompe nulla senza JS */
 .js [data-reveal], .js [data-stagger] > * { opacity: 0; }

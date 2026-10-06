@@ -2,6 +2,7 @@
 //   data-reveal       fade + slide up
 //   data-stagger      figli in cascata
 //   data-reveal-img   immagine con clip-path
+//   data-parallax     immagine interna in parallasse
 //   data-split        titolo hero, riga per riga (separare con <br>)
 //   data-words        testo che si accende parola per parola durante lo scroll
 const EASE = "power3.out";
@@ -26,6 +27,13 @@ export function initReveal() {
   gsap.utils.toArray("[data-reveal-img]").forEach((el) =>
     gsap.fromTo(el, { clipPath: "inset(0 0 100% 0)" }, {
       clipPath: "inset(0 0 0% 0)", duration: 1.4, ease: "power3.inOut", scrollTrigger: trigger(el),
+    })
+  );
+
+  // data-parallax: l'immagine interna scorre più lenta del riquadro (CSS la ingrandisce per coprire)
+  gsap.utils.toArray("[data-parallax]").forEach((el) =>
+    gsap.fromTo(el.querySelector("img"), { yPercent: -7 }, {
+      yPercent: 7, ease: "none", scrollTrigger: { trigger: el, start: "top bottom", end: "bottom top", scrub: true },
     })
   );
 

@@ -5,6 +5,7 @@ import { initShowroom, initShowroomVideo } from "./modules/showroom.js";
 import { initSolutions } from "./modules/solutions.js";
 import { initStatement } from "./modules/statement.js";
 import { initProjectsHover } from "./modules/projects.js";
+import { initGallery, initDemoForms, initLoop } from "./modules/gallery.js";
 
 document.documentElement.classList.add("js");
 
@@ -20,6 +21,9 @@ if (!reduced) {
   initShowroom();
   initReveal();
   initProjectsHover();
+  initLoop(); // senza movimento la striscia resta statica, niente copie
 }
 initDock();
 initShowroomVideo();
+initGallery();
+initDemoForms();

@@ -1,0 +1,62 @@
+/* I nostri showroom: per ogni sede due foto sfalsate e la scheda informazioni.
+   Ostuni: foto grande a sinistra, scheda e seconda foto a destra. Ceglie (--flip): speculare. */
+
+.stores { display: grid; gap: var(--section); padding-bottom: var(--section); }
+.store { display: grid; grid-template-columns: 1fr 1fr; column-gap: clamp(2rem, 5vw, 6rem); row-gap: clamp(3rem, 6vw, 6rem); align-items: start; }
+.store__img { aspect-ratio: 5 / 6; }
+.store__img--a { grid-column: 1; grid-row: 1 / 3; }
+.store__text { grid-column: 2; grid-row: 1; max-width: 32rem; padding-top: clamp(0rem, 3vw, 3rem); }
+.store__img--b { grid-column: 2; grid-row: 2; }
+.store--flip .store__img--a { grid-column: 2; }
+.store--flip .store__text, .store--flip .store__img--b { grid-column: 1; }
+.store--flip .store__text { justify-self: end; width: 100%; }
+
+.store__text > * + * { margin-top: 1.75rem; }
+.store__text .caps { color: var(--c-mute); }
+.store__text h2 { margin-top: .75rem; }
+.store__text > p:not(.caps) { color: var(--c-mute); }
+.store__info { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem var(--gutter); padding-block: 1.5rem; border-block: 1px solid var(--c-line); font-size: .9375rem; }
+.store__info dt { margin-bottom: .35rem; color: var(--c-mute); }
+.store__info a:hover { opacity: .6; }
+.store__links { display: flex; flex-direction: column; align-items: flex-start; } /* i btn--text hanno già padding verticale */
+.store__links .btn:first-child { margin-bottom: .6rem; }
+
+@media (max-width: 760px) {
+  .store, .store--flip { grid-template-columns: 1fr; }
+  .store [class^="store__"] { grid-column: 1; grid-row: auto; } /* specificità pari a --flip, vince perché dopo */
+  .store__text { order: -1; padding-top: 0; }
+}
+
+/* ---------- singolo showroom ---------- */
+
+/* testata: titolo a sinistra, foto che esce dal bordo destro */
+.store-hero { display: grid; grid-template-columns: 1fr 1.5fr; column-gap: clamp(2rem, 4vw, 5rem); margin-top: calc(var(--dock-h) + 2rem); padding-left: var(--gutter); }
+.store-hero__text { display: flex; flex-direction: column; justify-content: space-between; gap: 3rem; padding-block: 1.5rem clamp(2rem, 5vw, 5rem); }
+.store-hero__title { font-size: clamp(3rem, 6.5vw, 8rem); font-weight: 500; line-height: .92; letter-spacing: -.055em; }
+.store-hero__title .line { display: block; overflow: hidden; padding-bottom: .1em; }
+.store-hero__title .line > span { display: block; }
+.store-hero__media { height: min(82svh, 58vw); min-height: 420px; }
+@media (max-width: 760px) {
+  .store-hero { grid-template-columns: 1fr; padding-right: var(--gutter); }
+  .store-hero__media { height: auto; min-height: 0; aspect-ratio: 4 / 3; }
+}
+
+/* descrizione + orari e contatti */
+.store-about { align-items: start; row-gap: 3rem; }
+.store-about__text { grid-column: 1 / 7; font-size: clamp(1.25rem, 1.7vw, 1.75rem); line-height: 1.25; letter-spacing: -.015em; }
+.store-about__aside { grid-column: 8 / 13; display: grid; gap: 2rem; font-size: .9375rem; }
+.store-about__aside h2 { margin-bottom: .6rem; color: var(--c-mute); }
+.store-about__aside a[href^="tel"]:hover { opacity: .6; }
+@media (max-width: 760px) { .store-about__text, .store-about__aside { grid-column: 1 / -1; } }
+
+/* galleria scura: slide grandi, la successiva si intravede a destra (gallery.js) */
+.gallery { padding-block: clamp(4rem, 8vw, 7rem); color: var(--c-light); background: var(--c-ink); }
+.gallery__head { display: flex; justify-content: space-between; align-items: end; gap: 2rem; margin-bottom: clamp(2rem, 4vw, 3.5rem); }
+.gallery__track { display: flex; gap: var(--gutter); overflow-x: auto; padding-inline: var(--gutter); scroll-padding-inline: var(--gutter); scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; }
+.gallery__track::-webkit-scrollbar { display: none; }
+.gallery__track > * { flex: 0 0 min(72vw, (100svh - 15rem) * 1.6); /* 16:10 che sta nello schermo con il titolo */ aspect-ratio: 16 / 10; overflow: hidden; scroll-snap-align: start; }
+.gallery__nav { display: flex; gap: .75rem; }
+.gallery__nav button { display: grid; place-items: center; width: 3.25rem; aspect-ratio: 1; color: var(--c-ink); background: var(--c-light); border: 0; border-radius: 50%; cursor: pointer; transition: opacity .3s, transform .4s var(--ease); }
+.gallery__nav button:hover:not(:disabled) { transform: scale(1.08); }
+.gallery__nav button:disabled { opacity: .3; cursor: default; }
+@media (max-width: 760px) { .gallery__track > * { flex-basis: 86vw; aspect-ratio: 4 / 5; } }

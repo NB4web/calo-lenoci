@@ -1,0 +1,67 @@
+/* Macro categoria (es. Bagno): testata, foto piena, testo introduttivo e indice delle sottocategorie */
+
+/* titolo più contenuto rispetto alle altre pagine: qui è una domanda su due righe */
+.page-head__title { font-size: clamp(2.75rem, 5.5vw, 6.5rem); }
+
+/* foto a tutto schermo con il testo introduttivo in basso a destra, che si accende in scroll */
+.cat-cover { position: relative; height: 100svh; min-height: 560px; margin-bottom: var(--section); color: var(--c-light); }
+.cat-cover__media { position: absolute; inset: 0; }
+.cat-cover__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(11, 16, 18, .6), transparent 60%); }
+.cat-cover__text { position: absolute; right: var(--gutter); bottom: clamp(2.5rem, 6vw, 5.5rem); width: min(38rem, 42%); font-size: clamp(1.125rem, 1.6vw, 1.75rem); font-weight: 500; line-height: 1.08; letter-spacing: -.035em; }
+.cat-cover__text .word { opacity: .35; }
+@media (max-width: 760px) { .cat-cover__text { left: var(--gutter); width: auto; bottom: 7rem; } } /* sopra il dock */
+
+/* titolo sopra l'indice */
+.subcats-head { margin-bottom: clamp(3rem, 6vw, 5.5rem); }
+.subcats-head .h2 { max-width: 48rem; margin-top: 1.5rem; }
+
+/* indice sottocategorie: N° · nome gigante · etichetta · foto a destra */
+.subcats { border-top: 1px solid var(--c-line); }
+.subcat { display: grid; grid-template-columns: clamp(3.5rem, 9vw, 10rem) auto 1fr clamp(6rem, 12vw, 14rem); align-items: end; column-gap: 1rem; padding-block: clamp(1.5rem, 3vw, 2.75rem); border-bottom: 1px solid var(--c-line); }
+.subcat__num, .subcat__label { padding-bottom: .5em; font-size: .9375rem; }
+.subcat__name { font-size: clamp(2.25rem, 5.5vw, 6.5rem); font-weight: 500; line-height: .85; letter-spacing: -.055em; transition: opacity .4s var(--ease); }
+.subcat__media { grid-column: 4; grid-row: 1; justify-self: end; align-self: start; width: 70%; aspect-ratio: 4 / 5; overflow: hidden; }
+.subcats li:nth-child(even) .subcat__media { width: 100%; aspect-ratio: 3 / 2; }
+.subcat__media img { transition: transform 1s var(--ease); }
+.subcat:hover .subcat__media img { transform: scale(1.06); }
+.subcats:hover .subcat:not(:hover) .subcat__name { opacity: .3; }
+@media (max-width: 760px) {
+  .subcat { grid-template-columns: 1fr 6rem; row-gap: .75rem; }
+  .subcat__num { grid-column: 1; grid-row: 1; padding: 0; }
+  .subcat__name { grid-column: 1; grid-row: 2; }
+  .subcat__label { grid-column: 1; grid-row: 3; padding: 0; color: var(--c-mute); }
+  .subcat__media { grid-column: 2; grid-row: 1 / 4; align-self: center; }
+}
+
+/* ---------- sottocategoria (es. Sanitari) ---------- */
+
+/* citazione centrata */
+.cat-quote { display: grid; justify-items: center; gap: 1.5rem; text-align: center; }
+.cat-quote blockquote { max-width: 62rem; font-size: clamp(1.75rem, 3vw, 3.25rem); font-weight: 500; line-height: 1.05; letter-spacing: -.035em; }
+.cat-quote figcaption { font-size: .9375rem; }
+
+/* striscia di foto a scorrimento continuo, altezze diverse allineate in alto.
+   Il contenuto è duplicato da gallery.js (initLoop), quindi -50% = un giro esatto. */
+.strip { margin-top: clamp(4rem, 9vw, 9rem); overflow: hidden; }
+.strip__track { display: flex; align-items: flex-start; gap: 1.5rem; width: max-content; animation: strip 70s linear infinite; }
+.strip:hover .strip__track { animation-play-state: paused; }
+.strip figure { flex: none; width: clamp(10rem, 16vw, 20rem); aspect-ratio: 4 / 3; overflow: hidden; }
+.strip figure:nth-child(4n + 2) { aspect-ratio: 6 / 7; }
+.strip figure:nth-child(4n + 3) { aspect-ratio: 1; }
+.strip figure:nth-child(4n) { aspect-ratio: 2 / 3; }
+@keyframes strip { to { transform: translateX(calc(-50% - .75rem)); } }
+@media (prefers-reduced-motion: reduce) {
+  .strip { overflow-x: auto; }
+  .strip__track { animation: none; }
+}
+
+/* foto orizzontale a tutta larghezza sotto la testata */
+.cat-band { height: 75svh; min-height: 360px; margin-bottom: var(--section); }
+
+/* marchi */
+.brands-head { display: grid; justify-items: center; gap: 1.75rem; text-align: center; }
+.brands-head p:last-child { max-width: 34rem; color: var(--c-mute); }
+.brands { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; margin-top: clamp(3rem, 5vw, 4.5rem); background: var(--c-line); border: 1px solid var(--c-line); }
+.brands li { display: grid; place-items: center; aspect-ratio: 3 / 2; padding: 2rem; color: var(--c-mute); background: var(--c-bg); transition: color .4s var(--ease); }
+.brands li:hover { color: var(--c-ink); }
+@media (max-width: 760px) { .brands { grid-template-columns: 1fr 1fr; } }
