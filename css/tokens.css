@@ -11,7 +11,7 @@
   --font: "Geist", system-ui, -apple-system, sans-serif;
 
   --gutter: clamp(1rem, 2.5vw, 3rem);
-  --max: 1920px;
+  --max: 120rem; /* 1920px a 16px, scala con il root sopra i 1920 */
   --section: clamp(6rem, 11vw, 11rem);
   --dock-h: 2.875rem;
 

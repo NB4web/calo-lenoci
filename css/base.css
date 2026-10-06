@@ -1,6 +1,9 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { -webkit-text-size-adjust: 100%; }
+/* oltre i 1920px tutto scala in proporzione: i rem seguono la larghezza, così su 2K/4K
+   il layout resta identico a quello del 1920 (16px × 1920/120), solo più grande */
+@media (min-width: 1921px) { html { font-size: calc(100vw / 120); } }
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 
