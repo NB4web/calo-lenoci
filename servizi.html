@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Showroom Ostuni — Calò Lenoci</title>
+  <title>Servizi — Calò Lenoci</title>
   <meta name="robots" content="noindex, nofollow"><!-- anteprima per il cliente: togliere al lancio -->
-  <meta name="description" content="Showroom Calò Lenoci di Ostuni: orari, contatti, foto e prenotazione di un appuntamento.">
+  <meta name="description" content="Servizi Calò Lenoci: consulenza, progettazione, render 3D, supporto tecnico e assistenza post vendita.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@200;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/showroom.css">
+  <link rel="stylesheet" href="css/services.css">
 </head>
 <body id="top">
 
@@ -26,7 +26,7 @@
 <div class="dock" data-dock>
   <div class="dock__bar">
     <a href="#top" class="dock__brand" aria-label="Torna su"><img src="assets/logo/calolenoci-icon-white.svg" alt="" width="154" height="122"></a>
-    <span class="dock__label caps">Showroom Ostuni</span>
+    <span class="dock__label caps">Servizi</span>
     <button class="dock__burger" aria-label="Menu" aria-expanded="false" aria-controls="menu" data-menu-toggle><span></span><span></span><span></span></button>
   </div>
   <div class="dock__body" id="menu" data-lenis-prevent>
@@ -36,7 +36,7 @@
       <a href="index.html#progetti">Progetti</a>
       <a href="showroom.html">Showroom</a>
       <a href="ispirazioni.html">Ispirazioni</a>
-      <a href="servizi.html">Servizi</a>
+      <a href="servizi.html" aria-current="page">Servizi</a>
       <a href="news.html">News</a>
       <a href="contatti.html">Contatti</a>
     </nav>
@@ -53,54 +53,76 @@
 <main>
 
   <!-- TESTATA -->
-  <section class="store-hero">
-    <div class="store-hero__text">
-      <nav class="crumbs caps" aria-label="Percorso"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="showroom.html">Showroom</a><span aria-hidden="true">/</span><span aria-current="page">Ostuni</span></nav>
-      <h1 class="page-head__title" data-split>Showroom<br>Ostuni</h1>
-    </div>
-    <div class="store-hero__media" data-reveal-img data-parallax><img src="https://placehold.co/2000x1300/8f877c/8f877c" alt="Showroom Calò Lenoci di Ostuni"></div>
+  <section class="container grid12 page-head">
+    <nav class="crumbs caps" aria-label="Percorso"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Servizi</span></nav>
+    <h1 class="page-head__title" data-split>Servizi</h1>
+    <p class="page-head__intro" data-reveal>Dalla prima idea alla posa, fino all’assistenza dopo la consegna: un unico interlocutore per ogni fase del progetto.</p>
   </section>
 
-  <!-- DESCRIZIONE, ORARI, CONTATTI -->
-  <section class="section container grid12 store-about">
-    <p class="store-about__text" data-reveal>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-    <div class="store-about__aside" data-stagger>
-      <div>
-        <h2 class="caps">Orari di apertura</h2>
-        <p>Lunedì – Venerdì: 9.00–13.00 / 16.00–20.00<br>Sabato: 9.00–13.00</p>
-      </div>
-      <div>
-        <h2 class="caps">Contatti</h2>
-        <p>Via dell’Edilizia, 2 — 72017 Ostuni (BR)<br>T. <a href="tel:+3908311300987">0831 130 0987</a></p>
-      </div>
-      <div class="store__links">
-        <a href="#prenota" class="btn">Prenota un appuntamento</a>
-        <a href="https://www.google.com/maps/search/?api=1&amp;query=Via+dell%27Edilizia+2+Ostuni" class="btn btn--text" target="_blank" rel="noopener">Indicazioni</a>
-      </div>
+  <!-- SERVIZI: foto (o video) con il nome in grande, sotto la descrizione.
+       .svc__media può contenere un <img> o un <video autoplay muted loop playsinline> -->
+  <section class="svc" id="servizio-1">
+    <div class="svc__media" data-reveal-img data-parallax data-dark>
+      <img src="https://placehold.co/2400x1350/6f6a63/6f6a63" alt="" loading="lazy">
+      <h2 class="svc__title">Consulenza</h2>
+    </div>
+    <div class="container grid12 svc__body">
+      <p class="svc__label" data-reveal><span class="pill">01</span>Consulenza</p>
+      <p class="svc__text" data-words>Ti accompagniamo nella scelta di materiali, finiture e soluzioni con consulenti dedicati, in showroom o direttamente in cantiere, per trovare la risposta giusta a ogni esigenza e a ogni budget.</p>
     </div>
   </section>
 
-  <!-- GALLERIA a carosello (gallery.js) -->
-  <section class="gallery" data-gallery data-dark aria-label="Foto dello showroom" aria-roledescription="carosello">
-    <h2 class="h2 h2--sm gallery__title" data-reveal>Dentro lo showroom</h2>
-    <div class="gallery__stage">
-      <figure class="gallery__slide"><img src="https://placehold.co/1800x1200/6f6a63/6f6a63" alt="" loading="lazy"></figure>
-      <figure class="gallery__slide"><img src="https://placehold.co/1800x1200/8f877c/8f877c" alt="" loading="lazy"></figure>
-      <figure class="gallery__slide"><img src="https://placehold.co/1800x1200/a89f93/a89f93" alt="" loading="lazy"></figure>
-      <figure class="gallery__slide"><img src="https://placehold.co/1800x1200/7f7a73/7f7a73" alt="" loading="lazy"></figure>
-      <figure class="gallery__slide"><img src="https://placehold.co/1800x1200/b9b1a6/b9b1a6" alt="" loading="lazy"></figure>
+  <section class="svc" id="servizio-2">
+    <div class="svc__media" data-reveal-img data-parallax data-dark>
+      <img src="https://placehold.co/2400x1350/8f877c/8f877c" alt="" loading="lazy">
+      <h2 class="svc__title">Progettazione</h2>
     </div>
-    <div class="gallery__nav">
-      <button type="button" aria-label="Foto precedente"><svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M17 7H1M7 1 1 7l6 6"/></svg></button>
-      <button type="button" aria-label="Foto successiva"><svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M1 7h16M11 1l6 6-6 6"/></svg></button>
+    <div class="container grid12 svc__body">
+      <p class="svc__label" data-reveal><span class="pill">02</span>Progettazione</p>
+      <p class="svc__text" data-words>Il nostro ufficio tecnico sviluppa il progetto degli ambienti, dal rilievo alle tavole esecutive, dialogando con architetti e imprese perché ogni scelta trovi il suo posto.</p>
     </div>
   </section>
 
-  <!-- PRENOTA UN APPUNTAMENTO -->
+  <section class="svc" id="servizio-3">
+    <div class="svc__media" data-reveal-img data-parallax data-dark>
+      <img src="https://placehold.co/2400x1350/7f7a73/7f7a73" alt="" loading="lazy">
+      <h2 class="svc__title">Render 3D</h2>
+    </div>
+    <div class="container grid12 svc__body">
+      <p class="svc__label" data-reveal><span class="pill">03</span>Render 3D</p>
+      <p class="svc__text" data-words>Prima di decidere, vedi il risultato. Realizziamo render fotorealistici degli spazi per valutare materiali, colori e disposizione con la massima sicurezza.</p>
+    </div>
+  </section>
+
+  <section class="svc" id="servizio-4">
+    <div class="svc__media" data-reveal-img data-parallax data-dark>
+      <img src="https://placehold.co/2400x1350/a89f93/a89f93" alt="" loading="lazy">
+      <h2 class="svc__title">Supporto tecnico</h2>
+    </div>
+    <div class="container grid12 svc__body">
+      <p class="svc__label" data-reveal><span class="pill">04</span>Supporto tecnico</p>
+      <p class="svc__text" data-words>Seguiamo posa e installazione con tecnici esperti, coordinandoci con gli altri operatori del cantiere per un risultato a regola d’arte, nei tempi stabiliti.</p>
+    </div>
+  </section>
+
+  <section class="svc" id="servizio-5">
+    <div class="svc__media" data-reveal-img data-parallax data-dark>
+      <img src="https://placehold.co/2400x1350/5f5b55/5f5b55" alt="" loading="lazy">
+      <h2 class="svc__title">Assistenza post vendita</h2>
+    </div>
+    <div class="container grid12 svc__body">
+      <p class="svc__label" data-reveal><span class="pill">05</span>Assistenza post vendita</p>
+      <p class="svc__text" data-words>Il rapporto non finisce con la consegna: restiamo al tuo fianco per manutenzione, ricambi e garanzie, con un referente sempre a disposizione.</p>
+    </div>
+  </section>
+
+  <div class="container"><hr class="divider"></div>
+
+  <!-- CONTATTO -->
   <section class="section container grid12 booking" id="prenota">
     <div class="booking__text">
-      <p class="eyebrow" data-reveal>Appuntamento</p>
-      <h2 class="h2" data-reveal>Prenota un appuntamento</h2>
+      <p class="eyebrow" data-reveal>Contatti</p>
+      <h2 class="h2" data-reveal>Richiedi una consulenza</h2>
       <p data-reveal>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
       <div class="booking__services" data-reveal>
         <h3>Servizi su misura</h3>
@@ -116,7 +138,7 @@
 
     <!-- anteprima: il modulo non è ancora collegato a un backend (gallery.js → initDemoForms) -->
     <form class="form" data-demo data-reveal>
-      <input type="hidden" name="showroom" value="Ostuni">
+      <input type="hidden" name="pagina" value="Servizi">
       <div class="form__row">
         <input name="nome" placeholder="Nome*" aria-label="Nome" autocomplete="given-name" required>
         <input name="cognome" placeholder="Cognome*" aria-label="Cognome" autocomplete="family-name" required>
@@ -139,23 +161,8 @@
       <textarea name="messaggio" placeholder="Messaggio" aria-label="Messaggio"></textarea>
       <label class="form__check"><input type="checkbox" name="privacy" required><span>Ho letto e accetto l’<a href="#">informativa privacy</a>*</span></label>
       <button type="submit" class="btn">Invia richiesta</button>
-      <p class="form__status" role="status" data-form-status hidden>Grazie! Ti ricontatteremo al più presto per fissare l’appuntamento.</p>
+      <p class="form__status" role="status" data-form-status hidden>Grazie! Ti ricontatteremo al più presto.</p>
     </form>
-  </section>
-
-  <!-- CTA -->
-  <section class="section container">
-    <div class="cta-box">
-      <div class="cta-box__text">
-        <p class="eyebrow" data-reveal>Servizi su misura</p>
-        <h2 class="h2" data-reveal>Richiedi una consulenza con i nostri esperti.</h2>
-        <div class="cta-box__actions" data-reveal>
-          <a href="#contatti" class="btn">Richiedi informazioni</a>
-          <a href="servizi.html" class="btn btn--text">I nostri servizi</a>
-        </div>
-      </div>
-      <div class="cta-box__media" data-reveal-img><img src="https://placehold.co/1200x900/d4cec6/d4cec6" alt="" loading="lazy"></div>
-    </div>
   </section>
 
 </main>

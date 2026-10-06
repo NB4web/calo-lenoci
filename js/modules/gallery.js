@@ -1,18 +1,44 @@
-// Galleria orizzontale: scorrimento nativo con scroll-snap (touch e trackpad),
-// le frecce spostano di una slide e si disattivano agli estremi.
+// Galleria a carosello: foto attiva grande al centro, le vicine più piccole e inclinate ai lati.
+// Frecce, click sulle laterali e swipe; gira in loop.
 export function initGallery() {
+  const dur = matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 0.9;
   document.querySelectorAll("[data-gallery]").forEach((gallery) => {
-    const track = gallery.querySelector(".gallery__track");
+    const stage = gallery.querySelector(".gallery__stage");
+    const slides = [...stage.children];
     const [prev, next] = gallery.querySelectorAll(".gallery__nav button");
-    const step = () => track.firstElementChild.offsetWidth + parseFloat(getComputedStyle(track).columnGap);
-    const sync = () => {
-      prev.disabled = track.scrollLeft < 2;
-      next.disabled = track.scrollLeft > track.scrollWidth - track.clientWidth - 2;
+    const n = slides.length;
+    let active = 0;
+
+    const render = (d = dur) => {
+      const gap = stage.clientWidth * (innerWidth > 760 ? 0.57 : 0.74); // le laterali si intravedono appena ai bordi
+      slides.forEach((slide, i) => {
+        let o = (i - active + n) % n;
+        if (o > n / 2) o -= n; // offset relativo, -2..2 con 5 foto
+        const side = Math.abs(o) === 1;
+        gsap.to(slide, {
+          x: o * gap, scale: o === 0 ? 1 : 0.72, rotation: o * 10,
+          autoAlpha: Math.abs(o) <= 1 ? 1 : 0, zIndex: 2 - Math.abs(o),
+          duration: d, ease: "expo.out", overwrite: true,
+        });
+        slide.classList.toggle("is-side", side);
+        slide.setAttribute("aria-hidden", o !== 0);
+      });
     };
-    prev.addEventListener("click", () => track.scrollBy({ left: -step(), behavior: "smooth" }));
-    next.addEventListener("click", () => track.scrollBy({ left: step(), behavior: "smooth" }));
-    track.addEventListener("scroll", sync, { passive: true });
-    sync();
+    const go = (step) => { active = (active + step + n) % n; render(); };
+
+    prev.addEventListener("click", () => go(-1));
+    next.addEventListener("click", () => go(1));
+    slides.forEach((slide, i) => slide.addEventListener("click", () => slide.classList.contains("is-side") && go(i === (active + 1) % n ? 1 : -1)));
+
+    let startX = null; // swipe
+    stage.addEventListener("pointerdown", (e) => (startX = e.clientX));
+    stage.addEventListener("pointerup", (e) => {
+      if (startX !== null && Math.abs(e.clientX - startX) > 40) go(e.clientX < startX ? 1 : -1);
+      startX = null;
+    });
+
+    addEventListener("resize", () => render(0));
+    render(0);
   });
 }
 

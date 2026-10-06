@@ -87,7 +87,7 @@
 .video-modal { width: 100%; max-width: none; height: 100%; max-height: none; padding: clamp(1rem, 4vw, 4rem); display: grid; place-items: center; color: var(--c-light); background: rgba(11, 16, 18, .94); border: 0; }
 .video-modal:not([open]) { display: none; }
 .video-modal::backdrop { background: transparent; }
-.video-modal video { width: min(100%, calc((100svh - 8rem) * 16 / 9)); aspect-ratio: 16 / 9; background: #000; } /* 16:9 che sta sempre nello schermo */
+.video-modal video { width: min(100%, calc((100svh - 8rem) * 16 / 9)); height: auto; aspect-ratio: 16 / 9; background: #000; } /* 16:9 che sta sempre nello schermo */
 .video-modal__close { position: absolute; top: 1.25rem; right: var(--gutter); padding: .5rem 0; color: inherit; background: none; border: 0; cursor: pointer; }
 .video-modal__close:hover { opacity: .6; }
 html:has(.video-modal[open]) { overflow: hidden; }

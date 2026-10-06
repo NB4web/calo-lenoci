@@ -32,7 +32,7 @@ export function initReveal() {
 
   // data-parallax: l'immagine interna scorre più lenta del riquadro (CSS la ingrandisce per coprire)
   gsap.utils.toArray("[data-parallax]").forEach((el) =>
-    gsap.fromTo(el.querySelector("img"), { yPercent: -7 }, {
+    gsap.fromTo(el.querySelector("img, video"), { yPercent: -7 }, {
       yPercent: 7, ease: "none", scrollTrigger: { trigger: el, start: "top bottom", end: "bottom top", scrub: true },
     })
   );

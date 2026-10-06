@@ -1,8 +1,5 @@
 /* Macro categoria (es. Bagno): testata, foto piena, testo introduttivo e indice delle sottocategorie */
 
-/* titolo più contenuto rispetto alle altre pagine: qui è una domanda su due righe */
-.page-head__title { font-size: clamp(2.75rem, 5.5vw, 6.5rem); }
-
 /* foto a tutto schermo con il testo introduttivo in basso a destra, che si accende in scroll */
 .cat-cover { position: relative; height: 100svh; min-height: 560px; margin-bottom: var(--section); color: var(--c-light); }
 .cat-cover__media { position: absolute; inset: 0; }

@@ -30,14 +30,15 @@
 /* ---------- singolo showroom ---------- */
 
 /* testata: titolo a sinistra, foto che esce dal bordo destro */
-.store-hero { display: grid; grid-template-columns: 1fr 1.5fr; column-gap: clamp(2rem, 4vw, 5rem); margin-top: calc(var(--dock-h) + 2rem); padding-left: var(--gutter); }
+/* il titolo deborda sulla foto: colonna testo stretta, titolo su una riga per parola.
+   difference = bianco sulla foto scura, nero sul fondo bianco, sempre leggibile */
+.store-hero { display: grid; grid-template-columns: minmax(0, .3fr) 1.5fr; column-gap: clamp(1.5rem, 2.5vw, 3rem); margin-top: calc(var(--dock-h) + 2rem); padding-left: var(--gutter); }
 .store-hero__text { display: flex; flex-direction: column; justify-content: space-between; gap: 3rem; padding-block: 1.5rem clamp(2rem, 5vw, 5rem); }
-.store-hero__title { font-size: clamp(3rem, 6.5vw, 8rem); font-weight: 500; line-height: .92; letter-spacing: -.055em; }
-.store-hero__title .line { display: block; overflow: hidden; padding-bottom: .1em; }
-.store-hero__title .line > span { display: block; }
+.store-hero .page-head__title { position: relative; z-index: 1; width: max-content; color: #fff; mix-blend-mode: difference; }
 .store-hero__media { height: min(82svh, 58vw); min-height: 420px; }
 @media (max-width: 760px) {
   .store-hero { grid-template-columns: 1fr; padding-right: var(--gutter); }
+  .store-hero .page-head__title { width: auto; color: var(--c-ink); mix-blend-mode: normal; }
   .store-hero__media { height: auto; min-height: 0; aspect-ratio: 4 / 3; }
 }
 
@@ -49,14 +50,15 @@
 .store-about__aside a[href^="tel"]:hover { opacity: .6; }
 @media (max-width: 760px) { .store-about__text, .store-about__aside { grid-column: 1 / -1; } }
 
-/* galleria scura: slide grandi, la successiva si intravede a destra (gallery.js) */
-.gallery { padding-block: clamp(4rem, 8vw, 7rem); color: var(--c-light); background: var(--c-ink); }
-.gallery__head { display: flex; justify-content: space-between; align-items: end; gap: 2rem; margin-bottom: clamp(2rem, 4vw, 3.5rem); }
-.gallery__track { display: flex; gap: var(--gutter); overflow-x: auto; padding-inline: var(--gutter); scroll-padding-inline: var(--gutter); scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; }
-.gallery__track::-webkit-scrollbar { display: none; }
-.gallery__track > * { flex: 0 0 min(72vw, (100svh - 15rem) * 1.6); /* 16:10 che sta nello schermo con il titolo */ aspect-ratio: 16 / 10; overflow: hidden; scroll-snap-align: start; }
-.gallery__nav { display: flex; gap: .75rem; }
-.gallery__nav button { display: grid; place-items: center; width: 3.25rem; aspect-ratio: 1; color: var(--c-ink); background: var(--c-light); border: 0; border-radius: 50%; cursor: pointer; transition: opacity .3s, transform .4s var(--ease); }
-.gallery__nav button:hover:not(:disabled) { transform: scale(1.08); }
-.gallery__nav button:disabled { opacity: .3; cursor: default; }
-@media (max-width: 760px) { .gallery__track > * { flex-basis: 86vw; aspect-ratio: 4 / 5; } }
+/* galleria scura a carosello: foto attiva al centro, le vicine più piccole e inclinate ai lati (gallery.js) */
+.gallery { --slide-w: min(52vw, 62rem); padding-block: clamp(4rem, 8vw, 7rem); overflow: hidden; color: var(--c-light); text-align: center; background: var(--c-ink); }
+.gallery__title { margin-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+.gallery__stage { position: relative; height: calc(var(--slide-w) * 2 / 3); touch-action: pan-y; user-select: none; }
+.gallery__slide { position: absolute; top: 0; left: calc(50% - var(--slide-w) / 2); width: var(--slide-w); aspect-ratio: 3 / 2; overflow: hidden; }
+.gallery__slide.is-side { cursor: pointer; }
+.gallery__slide img { pointer-events: none; }
+.gallery__nav { display: flex; justify-content: center; gap: .75rem; margin-top: clamp(2.5rem, 5vw, 4rem); }
+.gallery__nav button { display: grid; place-items: center; width: 3rem; aspect-ratio: 1; color: inherit; background: none; border: 1px solid currentColor; border-radius: 50%; cursor: pointer; transition: background .3s, color .3s; }
+.gallery__nav button:hover { color: var(--c-ink); background: var(--c-light); }
+.gallery__nav svg { width: 1.1rem; }
+@media (max-width: 760px) { .gallery { --slide-w: 72vw; } }
