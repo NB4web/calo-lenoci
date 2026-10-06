@@ -11,7 +11,7 @@
 .page-head { padding-top: calc(var(--dock-h) + 2rem + clamp(4rem, 9vw, 8rem)); padding-bottom: clamp(3rem, 6vw, 5.5rem); align-items: end; row-gap: 2rem; }
 .crumbs { grid-column: 1 / -1; display: flex; gap: .6rem; color: var(--c-mute); }
 .crumbs a:hover { color: var(--c-ink); }
-.page-head__title { grid-column: 1 / 8; font-size: clamp(2.75rem, 10.5vw, 8.5rem); /* h1 di tutte le pagine interne: stessa misura ovunque */ font-weight: 500; line-height: .92; letter-spacing: -.06em; }
+.page-head__title { grid-column: 1 / 9; font-size: clamp(2.75rem, 7vw, 8.5rem); /* h1 di tutte le pagine interne: stessa misura ovunque, ~136px a 1920, ~100px a 1440 */ font-weight: 500; line-height: .92; letter-spacing: -.06em; }
 .page-head__title .line { display: block; overflow: hidden; padding-bottom: .1em; }
 .page-head__title .line > span { display: block; }
 .page-head__intro { grid-column: 9 / 13; max-width: 26rem; padding-bottom: 1rem; font-size: clamp(1rem, 1.25vw, 1.25rem); line-height: 1.3; }
