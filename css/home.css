@@ -130,6 +130,6 @@ html:has(.video-modal[open]) { overflow: hidden; }
 @media (max-width: 560px) { .why { grid-template-columns: 1fr; } .why li { min-height: 15rem; } }
 
 /* anteprima immagine che segue il cursore sulle righe progetto (projects.js) */
-.projects__preview { position: fixed; top: 0; left: 0; z-index: 12; width: clamp(14rem, 20vw, 22rem); aspect-ratio: 4 / 5; overflow: hidden; pointer-events: none; visibility: hidden; }
+.projects__preview { position: fixed; top: 0; left: 0; z-index: 12; overflow: hidden; /* misure dalla foto attiva (projects.js) */ pointer-events: none; visibility: hidden; }
 .projects__preview img { position: absolute; inset: 0; opacity: 0; transform: scale(1.12); transition: opacity .4s var(--ease), transform .9s var(--ease); }
 .projects__preview img.is-active { opacity: 1; transform: none; }

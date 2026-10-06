@@ -11,7 +11,7 @@
 
 /* mission / vision: foto piena, titolo con filetto in basso a sinistra, testo a destra */
 .about-panels { display: grid; gap: var(--gutter); }
-.about-panel { position: relative; isolation: isolate; height: 100svh; min-height: 560px; display: grid; align-content: end; padding: clamp(1.5rem, 4vw, 4rem); color: var(--c-light); }
+.about-panel { position: relative; isolation: isolate; height: 40.625rem; /* 650px, scala sopra i 1920 */ display: grid; align-content: end; padding: clamp(1.5rem, 4vw, 4rem); color: var(--c-light); }
 .about-panel__media { position: absolute; inset: 0; z-index: -1; }
 .about-panel__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(11, 16, 18, .65), transparent 55%); }
 .about-panel .grid12 { align-items: end; row-gap: 1.5rem; }
