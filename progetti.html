@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Progetti — Calò Lenoci</title>
+  <meta name="robots" content="noindex, nofollow"><!-- anteprima per il cliente: togliere al lancio -->
+  <meta name="description" content="I progetti Calò Lenoci: ville, hotel, resort e spazi commerciali realizzati in Italia e all’estero.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@200;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/projects.css">
+</head>
+<body id="top">
+
+<header class="topbar topbar--light">
+  <a href="index.html" class="topbar__logo" aria-label="Calò Lenoci — Home"><img src="assets/logo/calolenoci-logo-white.svg" alt="Calò Lenoci" width="259" height="43"></a>
+  <a href="#contatti" class="btn btn--text">Prenota una visita</a>
+</header>
+
+<!-- DOCK: vetro liquido da chiuso, pannello bianco espanso da aperto (dock.js) -->
+<div class="menu-backdrop" data-menu-backdrop></div>
+<div class="dock" data-dock>
+  <div class="dock__bar">
+    <a href="#top" class="dock__brand" aria-label="Torna su"><img src="assets/logo/calolenoci-icon-white.svg" alt="" width="154" height="122"></a>
+    <span class="dock__label caps">Progetti</span>
+    <button class="dock__burger" aria-label="Menu" aria-expanded="false" aria-controls="menu" data-menu-toggle><span></span><span></span><span></span></button>
+  </div>
+  <div class="dock__body" id="menu" data-lenis-prevent>
+    <nav class="dock__nav" aria-label="Principale">
+      <div class="dock__panel" data-panel="main">
+        <button type="button" data-sub="azienda">Azienda</button>
+        <button type="button" data-sub="prodotti">Prodotti</button>
+        <a href="progetti.html" aria-current="page">Progetti</a>
+        <button type="button" data-sub="showroom">Showroom</button>
+        <a data-href="ispirazioni.html" aria-disabled="true">Ispirazioni</a>
+        <a href="servizi.html">Servizi</a>
+        <a data-href="news.html" aria-disabled="true">News</a>
+        <a href="contatti.html">Contatti</a>
+      </div>
+      <div class="dock__panel" data-panel="azienda" hidden>
+        <button type="button" class="dock__back" data-back aria-label="Torna al menu"><svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M17 7H1M7 1 1 7l6 6"/></svg></button>
+        <a href="chi-siamo.html" class="dock__title">Azienda</a>
+        <a href="chi-siamo.html">Chi siamo</a>
+        <a data-href="storia.html" aria-disabled="true">La nostra storia</a>
+        <a data-href="marchi.html" aria-disabled="true">Marchi</a>
+        <a data-href="sostenibilita.html" aria-disabled="true">Sostenibilità</a>
+        <a data-href="lavora-con-noi.html" aria-disabled="true">Lavora con noi</a>
+      </div>
+      <div class="dock__panel" data-panel="prodotti" hidden>
+        <button type="button" class="dock__back" data-back aria-label="Torna al menu"><svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M17 7H1M7 1 1 7l6 6"/></svg></button>
+        <a href="prodotti.html" class="dock__title">Prodotti</a>
+        <p class="dock__group caps">Interni</p>
+        <a data-href="pavimenti.html" aria-disabled="true">Pavimenti e rivestimenti</a>
+        <a href="bagno.html">Bagno</a>
+        <a data-href="living.html" aria-disabled="true">Living</a>
+        <p class="dock__group caps">Impianti ed esterni</p>
+        <a data-href="serramenti.html" aria-disabled="true">Serramenti</a>
+        <a data-href="clima.html" aria-disabled="true">Clima e idraulica</a>
+        <a data-href="outdoor.html" aria-disabled="true">Outdoor</a>
+      </div>
+      <div class="dock__panel" data-panel="showroom" hidden>
+        <button type="button" class="dock__back" data-back aria-label="Torna al menu"><svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M17 7H1M7 1 1 7l6 6"/></svg></button>
+        <a href="showroom.html" class="dock__title">Showroom</a>
+        <a href="showroom-ostuni.html">Ostuni</a>
+        <a data-href="showroom-ceglie.html" aria-disabled="true">Ceglie Messapica</a>
+      </div>
+    </nav>
+    <div class="dock__foot">
+      <div class="dock__meta">
+        <p><span class="caps">Ostuni</span>Via dell’Edilizia, 2<br><a href="tel:+3908311300987">0831 130 0987</a></p>
+        <p><span class="caps">Ceglie Messapica</span>Via Foggia, 1<br><a href="tel:+390831377180">0831 377180</a></p>
+      </div>
+      <a href="#contatti" class="btn">Prenota una visita</a>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- TESTATA -->
+  <section class="container grid12 page-head">
+    <nav class="crumbs caps" aria-label="Percorso"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Progetti</span></nav>
+    <h1 class="page-head__title" data-split>Progetti</h1>
+    <p class="page-head__intro" data-reveal>Ville, hotel, resort e spazi commerciali in Italia e all’estero: ogni progetto racconta una storia di dialogo e precisione.</p>
+  </section>
+
+  <!-- PROGETTI: info a sinistra, slider di foto a destra (initSlider in gallery.js) -->
+  <section class="projs" aria-label="Elenco progetti">
+    <article class="proj" id="progetto-1">
+      <div class="proj__info">
+        <p class="proj__date" data-reveal>Marzo 2025</p>
+        <h2 class="proj__name" data-reveal>Pontile <span class="proj__loc">(Qatar)</span></h2>
+        <div class="proj__tags" data-reveal><span class="tag">Pietra naturale</span><span class="tag">Arredo bagno</span><span class="tag">Infissi</span></div>
+      </div>
+      <div class="proj__slider" data-slider>
+        <div class="proj__track" data-lightbox>
+          <figure><img src="assets/img/progetto-1.webp" alt="Pontile, Qatar" loading="lazy"></figure>
+          <figure><img src="https://placehold.co/700x1000/8f877c/8f877c" alt="" loading="lazy"></figure>
+          <figure><img src="https://placehold.co/700x1000/c9c3bb/c9c3bb" alt="" loading="lazy"></figure>
+          <figure><img src="https://placehold.co/700x1000/7f7a73/7f7a73" alt="" loading="lazy"></figure>
+          <figure><img src="https://placehold.co/700x1000/a89f93/a89f93" alt="" loading="lazy"></figure>
+        </div>
+        <div class="proj__ctrl">
+          <span class="proj__progress" aria-hidden="true"><span></span></span>
+          <nav aria-label="Foto Pontile">
+            <button type="button" aria-label="Foto precedente"><svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M17 7H1M7 1 1 7l6 6"/></svg></button>
+            <button type="button" aria-label="Foto successiva"><svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M1 7h16M11 1l6 6-6 6"/></svg></button>
+          </nav>
+        </div>
+      </div>
+    </article>
+    <article class="proj" id="progetto-2">
+      <div class="proj__info">
+        <p class="proj__date" data-reveal>Novembre 2024</p>
+        <h2 class="proj__name" data-reveal>Villa Privata <span class="proj__loc">(Saint Tropez)</span></h2>
+        <div class="proj__tags" data-reveal><span class="tag">Resina e microcemento</span><span class="tag">Docce e vasche</span><span class="tag">Minipiscine</span></div>
+      </div>
+      <div class="proj__slider" data-slider>
+        <div class="proj__track" data-lightbox>
+          <figure><img src="assets/img/progetto-2.webp" alt="Villa Privata, Saint Tropez" loading="lazy"></figure>
+          <figure><img src="https://placehold.co/700x1000/c9c3bb/c9c3bb" alt="" loading="lazy"></figure>
+          <figure><img src="https://placehold.co/700x1000/7f7a73/7f7a73" alt="" loading="lazy"></figure>
+          <figure><img src="https://placehold.co/700x1000/a89f93/a89f93" alt="" loading="lazy"></figure>
+          <figure><img src="https://placehold.co/700x1000/b9b1a6/b9b1a6" alt="" loading="lazy"></figure>
+        </div>
+        <div class="proj__ctrl">
+          <span class="proj__progress" aria-hidden="true"><span></span></span>
+          <nav aria-label="Foto Villa Privata">
+            <button type="button" aria-label="Foto precedente"><svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M17 7H1M7 1 1 7l6 6"/></svg></button>
+            <button type="button" aria-label="Foto successiva"><svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M1 7h16M11 1l6 6-6 6"/></svg></button>
+          </nav>
+        </div>
+      </div>
+    </article>
+    <article class="proj" id="progetto-3">
+      <div class="proj__info">
+        <p class="proj__date" data-reveal>Giugno 2024</p>
+        <h2 class="proj__name" data-reveal>Sole in me resort <span class="proj__loc">(Puglia)</span></h2>
+        <div class="proj__tags" data-reveal><span class="tag">Graniglia e cementine</span><span class="tag">Porte interne</span></div>
+      </div>
+      <div class="proj__slider" data-slider>
+        <div class="proj__track" data-lightbox>
+          <figure><img src="assets/img/progetto-3.webp" alt="Sole in me resort, Puglia" loading="lazy"></figure>
+          <figure><img src="https://placehold.co/700x1000/7f7a73/7f7a73" alt="" loading="lazy"></figure>
+          <figure><img src="https://placehold.co/700x1000/a89f93/a89f93" alt="" loading="lazy"></figure>
+          <figure><img src="https://placehold.co/700x1000/b9b1a6/b9b1a6" alt="" loading="lazy"></figure>
+          <figure><img src="https://placehold.co/700x1000/8f877c/8f877c" alt="" loading="lazy"></figure>
+        </div>
+        <div class="proj__ctrl">
+          <span class="proj__progress" aria-hidden="true"><span></span></span>
+          <nav aria-label="Foto Sole in me resort">
+            <button type="button" aria-label="Foto precedente"><svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M17 7H1M7 1 1 7l6 6"/></svg></button>
+            <button type="button" aria-label="Foto successiva"><svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M1 7h16M11 1l6 6-6 6"/></svg></button>
+          </nav>
+        </div>
+      </div>
+    </article>
+    <article class="proj" id="progetto-4">
+      <div class="proj__info">
+        <p class="proj__date" data-reveal>Febbraio 2024</p>
+        <h2 class="proj__name" data-reveal>Hotel Oliva Resort <span class="proj__loc">(Grecia)</span></h2>
+        <div class="proj__tags" data-reveal><span class="tag">Parquet</span><span class="tag">Cucine</span><span class="tag">Climatizzazione</span></div>
+      </div>
+      <div class="proj__slider" data-slider>
+        <div class="proj__track" data-lightbox>
+          <figure><img src="assets/img/progetto-4.webp" alt="Hotel Oliva Resort, Grecia" loading="lazy"></figure>
+          <figure><img src="https://placehold.co/700x1000/a89f93/a89f93" alt="" loading="lazy"></figure>
+          <figure><img src="https://placehold.co/700x1000/b9b1a6/b9b1a6" alt="" loading="lazy"></figure>
+          <figure><img src="https://placehold.co/700x1000/8f877c/8f877c" alt="" loading="lazy"></figure>
+          <figure><img src="https://placehold.co/700x1000/c9c3bb/c9c3bb" alt="" loading="lazy"></figure>
+        </div>
+        <div class="proj__ctrl">
+          <span class="proj__progress" aria-hidden="true"><span></span></span>
+          <nav aria-label="Foto Hotel Oliva Resort">
+            <button type="button" aria-label="Foto precedente"><svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M17 7H1M7 1 1 7l6 6"/></svg></button>
+            <button type="button" aria-label="Foto successiva"><svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M1 7h16M11 1l6 6-6 6"/></svg></button>
+          </nav>
+        </div>
+      </div>
+    </article>
+    <article class="proj" id="progetto-5">
+      <div class="proj__info">
+        <p class="proj__date" data-reveal>Settembre 2023</p>
+        <h2 class="proj__name" data-reveal>Boutique Gelateria <span class="proj__loc">(Italia)</span></h2>
+        <div class="proj__tags" data-reveal><span class="tag">Ceramiche</span><span class="tag">Sanitari</span><span class="tag">Pareti vetrate</span></div>
+      </div>
+      <div class="proj__slider" data-slider>
+        <div class="proj__track" data-lightbox>
+          <figure><img src="assets/img/progetto-5.webp" alt="Boutique Gelateria, Italia" loading="lazy"></figure>
+          <figure><img src="https://placehold.co/700x1000/b9b1a6/b9b1a6" alt="" loading="lazy"></figure>
+          <figure><img src="https://placehold.co/700x1000/8f877c/8f877c" alt="" loading="lazy"></figure>
+          <figure><img src="https://placehold.co/700x1000/c9c3bb/c9c3bb" alt="" loading="lazy"></figure>
+          <figure><img src="https://placehold.co/700x1000/7f7a73/7f7a73" alt="" loading="lazy"></figure>
+        </div>
+        <div class="proj__ctrl">
+          <span class="proj__progress" aria-hidden="true"><span></span></span>
+          <nav aria-label="Foto Boutique Gelateria">
+            <button type="button" aria-label="Foto precedente"><svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M17 7H1M7 1 1 7l6 6"/></svg></button>
+            <button type="button" aria-label="Foto successiva"><svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M1 7h16M11 1l6 6-6 6"/></svg></button>
+          </nav>
+        </div>
+      </div>
+    </article>
+  </section>
+
+</main>
+
+<footer class="footer" id="contatti" data-dark>
+  <a href="index.html" class="footer__logo" aria-label="Calò Lenoci — Home"><img src="assets/logo/calolenoci-logo-white.svg" alt="Calò Lenoci" width="259" height="43" loading="lazy"></a>
+  <div class="footer__cols">
+    <div>
+      <h2>Calò Lenoci Francesco srl</h2>
+      <address>
+        <p>Via Foggia, 1<br>72013 Ceglie Messapica (BR)</p>
+        <p><a href="tel:+390831377180">(+39) 0831 377180</a></p>
+        <p><a href="mailto:info@calolenocifrancesco.it">info@calolenocifrancesco.it</a></p>
+      </address>
+    </div>
+    <div>
+      <h2>Prodotti</h2>
+      <ul>
+        <li><a href="pavimenti.html">Pavimenti e rivestimenti</a></li>
+        <li><a href="bagno.html">Bagno</a></li>
+        <li><a href="living.html">Living</a></li>
+        <li><a href="serramenti.html">Serramenti</a></li>
+        <li><a href="clima.html">Clima e idraulica</a></li>
+        <li><a href="outdoor.html">Outdoor</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Azienda</h2>
+      <ul>
+        <li><a href="chi-siamo.html">Chi siamo</a></li>
+        <li><a href="storia.html">La nostra storia</a></li>
+        <li><a href="showroom.html">Showroom</a></li>
+        <li><a href="ispirazioni.html">Ispirazioni</a></li>
+        <li><a href="marchi.html">Marchi</a></li>
+        <li><a href="sostenibilita.html">Sostenibilità</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Servizi</h2>
+      <ul>
+        <li><a href="servizi.html#servizio-1">Consulenza</a></li>
+        <li><a href="servizi.html#servizio-2">Progettazione</a></li>
+        <li><a href="servizi.html#servizio-3">Render 3D</a></li>
+        <li><a href="servizi.html#servizio-4">Supporto tecnico</a></li>
+        <li><a href="servizi.html#servizio-5">Assistenza post vendita</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Link utili</h2>
+      <ul>
+        <li><a href="contatti.html">Contatti</a></li>
+        <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
+        <li><a href="news.html">News</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Seguici</h2>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bar">
+    <span>Calò Lenoci Francesco trading S.r.l – Tutti i diritti riservati. Sede legale: Via foggia 1 – 72013 – Ceglie Messapica (BR). P.IVA: IT02582780744 | REA: 156796. Capitale sociale: € 100.000,00. PEC: calolenocifrancescotradingsrl@pec.it</span>
+    <nav aria-label="Note legali"><a href="#">Privacy Policy</a><a href="#">Cookie Policy</a><span>Made in Never Before Italia</span></nav>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

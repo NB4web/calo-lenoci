@@ -46,6 +46,16 @@ export function initReveal() {
     });
   });
 
+  // hero: foto a metà velocità dello scroll + zoom lento all'avvio (effetto fluid.glass)
+  const heroImg = document.querySelector(".hero__media img");
+  if (heroImg) {
+    gsap.from(heroImg, { scale: 1.12, duration: 2.6, ease: "power3.out" });
+    gsap.to(heroImg, {
+      y: () => heroImg.parentElement.offsetHeight / 2, ease: "none",
+      scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true, invalidateOnRefresh: true },
+    });
+  }
+
   const title = document.querySelector("[data-split]");
   if (title) {
     title.innerHTML = title.innerHTML.split(/<br\s*\/?>/).map((l) => `<span class="line"><span>${l}</span></span>`).join("");

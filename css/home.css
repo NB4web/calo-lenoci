@@ -1,8 +1,8 @@
-/* hero: immagine ferma (sticky) mentre titolo e intro le scorrono sopra */
-.hero { position: relative; height: 155svh; overflow: clip; color: var(--c-light); background: var(--c-ink); } /* clip, non hidden: hidden romperebbe lo sticky */
-.hero__media { position: absolute; inset: 0; }
-.hero__sticky { position: sticky; top: 0; height: 100svh; overflow: hidden; }
-.hero__sticky::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.25), transparent 22%, transparent 45%, rgba(0,0,0,.45)); }
+/* hero (come fluid.glass): la foto copre tutto l'hero e in scroll sale a metà velocità
+   mentre titolo e intro le scorrono sopra (reveal.js); all'avvio uno zoom lento */
+.hero { position: relative; height: 155svh; overflow: clip; color: var(--c-light); background: var(--c-ink); }
+.hero__media { position: absolute; inset: 0; overflow: hidden; }
+.hero__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.3), transparent 15%, transparent 35%, rgba(0,0,0,.5) 65%); }
 .hero__title { position: absolute; z-index: 1; top: 100svh; left: var(--gutter); translate: 0 -100%; margin-top: -2.5rem; max-width: calc(100% - 2 * var(--gutter)); font-size: clamp(3.25rem, 8vw, 9.5rem); font-weight: 500; line-height: .92; letter-spacing: -.06em; }
 .hero__title .line { display: block; overflow: hidden; padding-bottom: .1em; }
 .hero__title .line > span { display: block; }

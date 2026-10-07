@@ -1,0 +1,26 @@
+/* Progetti: un progetto per riga, info a sinistra e slider di foto che esce dal bordo destro (gallery.js, initSlider) */
+
+.projs { padding-bottom: var(--section); }
+.proj { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); column-gap: var(--gutter); row-gap: 2rem; padding: clamp(3rem, 6vw, 6rem) 0 clamp(3rem, 6vw, 6rem) var(--gutter); border-top: 1px solid var(--c-line); }
+.proj__info { display: flex; flex-direction: column; gap: 1.5rem; padding-right: var(--gutter); }
+.proj__date { color: var(--c-mute); }
+.proj__name { font-size: clamp(2rem, 3.4vw, 3.75rem); font-weight: 400; line-height: 1; letter-spacing: -.03em; }
+.proj__loc { color: var(--c-mute); }
+.proj__tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+.proj__track { display: flex; gap: .75rem; overflow-x: auto; padding-right: var(--gutter); scroll-padding-left: 0; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; }
+.proj__track::-webkit-scrollbar { display: none; }
+.proj__track figure { flex: 0 0 clamp(15rem, 25vw, 30rem); aspect-ratio: 7 / 10; overflow: hidden; scroll-snap-align: start; }
+.proj__ctrl { display: flex; align-items: center; gap: 1.5rem; margin-top: 1.5rem; padding-right: var(--gutter); }
+.proj__progress { flex: 1; height: 1px; background: var(--c-line); }
+.proj__progress span { display: block; height: 100%; background: var(--c-ink); transform-origin: left; }
+.proj__ctrl nav { display: flex; gap: .5rem; }
+.proj__ctrl button { display: grid; place-items: center; width: 3.25rem; aspect-ratio: 1; color: inherit; background: none; border: 1px solid var(--c-ink); cursor: pointer; transition: background .3s, color .3s, opacity .3s; }
+.proj__ctrl button:hover:not(:disabled) { color: var(--c-light); background: var(--c-ink); }
+.proj__ctrl button:disabled { opacity: .3; cursor: default; }
+.proj__ctrl svg { width: 1.1rem; }
+
+@media (max-width: 900px) {
+  .proj { grid-template-columns: 1fr; }
+  .proj__track figure { flex-basis: 70vw; }
+}
