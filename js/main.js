@@ -5,6 +5,7 @@ import { initShowroom, initShowroomVideo } from "./modules/showroom.js";
 import { initSolutions } from "./modules/solutions.js";
 import { initStatement } from "./modules/statement.js";
 import { initProjectsHover } from "./modules/projects.js";
+import { initBooking } from "./modules/booking.js";
 import { initGallery, initDemoForms, initLoop, initLightbox, initSlider } from "./modules/gallery.js";
 
 document.documentElement.classList.add("js");
@@ -28,4 +29,5 @@ initShowroomVideo();
 initGallery();
 initSlider();
 initLightbox();
+initBooking(); // prima di initDemoForms: il modulo del pannello è creato qui
 initDemoForms();

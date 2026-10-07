@@ -18,7 +18,7 @@
 
 <header class="topbar">
   <a href="index.html" class="topbar__logo" aria-label="Calò Lenoci — Home"><img src="assets/logo/calolenoci-logo-white.svg" alt="Calò Lenoci" width="259" height="43"></a>
-  <a href="#contatti" class="btn btn--text">Prenota una visita</a>
+  <a href="contatti.html#modulo" class="btn btn--text" data-booking>Prenota una visita</a>
 </header>
 
 <!-- DOCK: vetro liquido da chiuso, pannello bianco espanso da aperto (dock.js) -->
@@ -74,7 +74,7 @@
         <p><span class="caps">Ostuni</span>Via dell’Edilizia, 2<br><a href="tel:+3908311300987">0831 130 0987</a></p>
         <p><span class="caps">Ceglie Messapica</span>Via Foggia, 1<br><a href="tel:+390831377180">0831 377180</a></p>
       </div>
-      <a href="#contatti" class="btn">Prenota una visita</a>
+      <a href="contatti.html#modulo" class="btn" data-booking>Prenota una visita</a>
     </div>
   </div>
 </div>
@@ -232,7 +232,7 @@
   <!-- SHOWROOM -->
   <section class="showroom" id="showroom" data-dark>
     <div class="showroom__stage" data-showroom>
-      <div class="showroom__media"><img src="https://placehold.co/2400x1400/6f6a63/6f6a63" alt="Showroom" loading="lazy"></div>
+      <div class="showroom__media"><video src="assets/video/showroom.mp4" muted loop playsinline preload="metadata" aria-hidden="true"></video></div>
       <button class="showroom__play" type="button" aria-label="Guarda il video dello showroom" data-video-open><span class="play-cursor" aria-hidden="true"><span class="caps">Play</span></span></button>
       <h2 class="showroom__title">Due showroom dove toccare con mano materiali e soluzioni.</h2>
       <div class="showroom__info">
@@ -261,18 +261,34 @@
     </ul>
   </section>
 
-  <!-- CTA -->
-  <section class="section container">
-    <div class="cta-box">
-      <div class="cta-box__text">
-        <p class="eyebrow" data-reveal>Servizi su misura</p>
-        <h2 class="h2" data-reveal>Richiedi una consulenza con i nostri esperti.</h2>
-        <div class="cta-box__actions" data-reveal>
-          <a href="#contatti" class="btn">Prenota una visita</a>
-          <a href="servizi.html" class="btn btn--text">I nostri servizi</a>
-        </div>
+  <!-- I NOSTRI MARCHI: loghi in scorrimento continuo (initLoop in gallery.js) -->
+  <section class="section brands-band" aria-labelledby="marchi-title">
+    <div class="container">
+      <div class="rule">
+        <p class="eyebrow" data-reveal>I nostri marchi</p>
+        <h2 class="brands-band__title" id="marchi-title" data-reveal>I migliori marchi,<br>scelti per te.</h2>
       </div>
-      <div class="cta-box__media" data-reveal-img><img src="assets/img/consulenza.webp" alt="Consulenza nello showroom Calò Lenoci" loading="lazy"></div>
+    </div>
+    <!-- ponytail: loghi da fornire (SVG), sostituire gli span con <img src="assets/logo/marchi/nome.svg" alt="Nome marchio"> -->
+    <div class="marquee">
+      <ul class="marquee__track" data-loop>
+        <li><span class="brand-ph">Logo marchio 1</span></li>
+        <li><span class="brand-ph">Logo marchio 2</span></li>
+        <li><span class="brand-ph">Logo marchio 3</span></li>
+        <li><span class="brand-ph">Logo marchio 4</span></li>
+        <li><span class="brand-ph">Logo marchio 5</span></li>
+        <li><span class="brand-ph">Logo marchio 6</span></li>
+        <li><span class="brand-ph">Logo marchio 7</span></li>
+        <li><span class="brand-ph">Logo marchio 8</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PARLIAMONE: foto piena con riquadro di testo in basso a destra; il link apre il pannello "Prenota una visita" -->
+  <section class="talk" data-dark aria-label="Contattaci">
+    <div class="talk__media" data-parallax><img src="assets/img/consulenza.webp" alt="Consulenza nello showroom Calò Lenoci" loading="lazy"></div>
+    <div class="talk__box" data-reveal>
+      <p>Se vuoi dare forma a uno spazio eccezionale, <a href="contatti.html#modulo" data-booking>parliamone.</a></p>
     </div>
   </section>
 
@@ -280,7 +296,6 @@
 
 <dialog class="video-modal" aria-label="Video showroom" data-video-modal data-lenis-prevent>
   <button class="video-modal__close caps" type="button" data-video-close>Chiudi</button>
-  <!-- ponytail: file video da fornire -->
   <video src="assets/video/showroom.mp4" controls playsinline preload="none"></video>
 </dialog>
 

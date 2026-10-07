@@ -65,8 +65,7 @@
 /* showroom: sezione scura, immagine che si apre in scroll (vedi showroom.js) */
 .showroom { background: var(--c-ink); color: var(--c-light); }
 .showroom__stage { position: relative; height: 100svh; min-height: 640px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding-inline: calc(var(--gutter) + clamp(0rem, 3vw, 3.5rem)); overflow: hidden; }
-.showroom__media { position: absolute; inset: 0; }
-.showroom__media::after { content: ""; position: absolute; inset: 0; background: rgba(11, 16, 18, .4); }
+.showroom__media { position: absolute; inset: 0; opacity: .45; } /* scurito sul fondo scuro, come stato finale (senza JS o con reduced motion) */
 .showroom__title { position: relative; z-index: 1; max-width: 26rem; font-size: clamp(1.75rem, 2.6vw, 2.5rem); font-weight: 400; line-height: 1.05; letter-spacing: -.02em; }
 .showroom__info { position: relative; z-index: 1; text-align: right; font-size: .9375rem; }
 .showroom__title { pointer-events: none; } /* il cursore Play continua sopra il titolo */
@@ -133,3 +132,11 @@ html:has(.video-modal[open]) { overflow: hidden; }
 .projects__preview { position: fixed; top: 0; left: 0; z-index: 12; overflow: hidden; /* misure dalla foto attiva (projects.js) */ pointer-events: none; visibility: hidden; }
 .projects__preview img { position: absolute; inset: 0; opacity: 0; transform: scale(1.12); transition: opacity .4s var(--ease), transform .9s var(--ease); }
 .projects__preview img.is-active { opacity: 1; transform: none; }
+
+/* parliamone: foto a tutta larghezza, riquadro chiaro con frase grande in basso a destra */
+.talk { position: relative; height: 90svh; min-height: 520px; }
+.talk__media { position: absolute; inset: 0; }
+.talk__box { position: absolute; right: var(--gutter); bottom: var(--gutter); width: min(46rem, calc(100% - 2 * var(--gutter))); min-height: clamp(12rem, 22vw, 17rem); padding: clamp(1.5rem, 2.5vw, 2.5rem); color: var(--c-ink); background: var(--c-bg); border-radius: 4px; }
+.talk__box p { font-size: clamp(1.75rem, 3vw, 3.25rem); font-weight: 500; line-height: 1.02; letter-spacing: -.04em; }
+.talk__box a { text-decoration: underline; text-decoration-thickness: .06em; text-underline-offset: .12em; transition: opacity .3s; }
+.talk__box a:hover { opacity: .6; }

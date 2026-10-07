@@ -1,12 +1,24 @@
-// Showroom: sezione pinnata, l'immagine si apre da riquadro a tutto schermo.
+// Showroom (come fluid.glass): sezione pinnata, il video in loop parte da riquadro ridotto e cresce
+// a tutto schermo scurendosi, mentre titolo e indirizzi scivolano verso i bordi.
 export function initShowroom() {
   const stage = document.querySelector("[data-showroom]");
   if (!stage) return;
+  const media = stage.querySelector(".showroom__media");
+  const video = media.querySelector("video");
+  const shift = () => innerWidth * 0.04;
+
   gsap.timeline({
-    scrollTrigger: { trigger: stage, start: "top top", end: "+=100%", scrub: true, pin: true },
+    scrollTrigger: { trigger: stage, start: "top top", end: "+=100%", scrub: true, pin: true, invalidateOnRefresh: true },
   })
-    .fromTo(stage.querySelector(".showroom__media"), { clipPath: "inset(20% 24%)" }, { clipPath: "inset(0% 0%)", ease: "none" })
-    .fromTo(stage.querySelector(".showroom__media img"), { scale: 1.2 }, { scale: 1, ease: "none" }, 0);
+    .fromTo(media, { scale: 0.55, opacity: 0.8 }, { scale: 1, opacity: 0.45, ease: "none" })
+    .fromTo(stage.querySelector(".showroom__title"), { x: shift }, { x: 0, ease: "none" }, 0)
+    .fromTo(stage.querySelector(".showroom__info"), { x: () => -shift() }, { x: 0, ease: "none" }, 0);
+
+  // il video gira solo quando la sezione è a schermo (si scarica solo da lì in poi)
+  ScrollTrigger.create({
+    trigger: stage, start: "top bottom", end: "bottom top",
+    onToggle: (self) => (self.isActive ? video.play().catch(() => {}) : video.pause()),
+  });
 }
 
 // Video showroom: cursore "Play" che segue il mouse, click apre il video in un <dialog>.
