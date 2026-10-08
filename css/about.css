@@ -29,9 +29,6 @@
 .values p { max-width: 20rem; font-size: .9375rem; color: var(--c-mute); }
 @media (max-width: 1000px) { .values { grid-template-columns: 1fr 1fr; } }
 
-/* sostenibilità: foto a tutto schermo con testo in basso a sinistra */
-.about-green { position: relative; isolation: isolate; height: 100svh; min-height: 600px; display: flex; align-items: flex-end; padding-bottom: clamp(3rem, 7vw, 6rem); color: var(--c-light); }
-.about-green .about-panel__media::after { background: linear-gradient(to top right, rgba(11, 16, 18, .7), transparent 60%); }
-.about-green__text { max-width: 40rem; }
-.about-green__text > * + * { margin-top: 1.75rem; }
-.about-green__text p:not(.eyebrow) { max-width: 30rem; color: rgba(255, 255, 255, .85); }
+
+/* CTA finale: segue i valori, che hanno già il margine di sezione sopra */
+.about-cta { padding-bottom: var(--section); }
